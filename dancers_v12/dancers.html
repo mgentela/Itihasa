@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dancers – Ithihasa Anubhava</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #690058 0%, #620e5a 25%, #bd4981 60%, #dd7122 85%, #fb9062 100%);
+      font-family: 'Crimson Text', serif;
+      color: #ecbad2;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #b83c0c;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: #ecbad2;
+      text-decoration: none;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 0.75; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 2.5rem 1rem 0.5rem;
+    }
+    .page-header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #ecbad2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .header-rule {
+      width: 220px;
+      border: none;
+      border-top: 1px solid rgba(236,186,210,0.5);
+      margin: 0.75rem auto 0;
+    }
+
+    /* ── GRID ── */
+    .dancers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem 1rem;
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    @media (max-width: 700px) { .dancers-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── CARD ── */
+    .dancer-card { text-align: center; }
+
+    .img-wrap {
+      width: 100%;
+      aspect-ratio: 400 / 348;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .dancer-card:hover .img-wrap img { transform: scale(1.04); }
+
+    .dancer-name {
+      margin-top: 0.45rem;
+      font-family: 'Crimson Text', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ecbad2;
+      line-height: 1.3;
+    }
+    .dancer-role {
+      font-family: 'Crimson Text', serif;
+      font-size: 0.82rem;
+      color: #ecbad2;
+      font-style: italic;
+      margin-top: 0.1rem;
+      opacity: 0.9;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(0,0,0,0.25);
+      text-align: center;
+      padding: 1.25rem 1rem;
+      font-size: 0.85rem;
+      color: #ecbad2;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logos">
+    <img src="nritya_logo_transparent.png" alt="NRITYA logo"/>
+    <img src="naadam_logo_pink.png" alt="NAADAM logo"/>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dancers.html">Dancers</a></li>
+    <li><a href="musicians.html">Musicians</a></li>
+    <li><a href="program.html">Program</a></li>
+    <li><a href="support.html">Support Us</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <h1>Meet our dancers!</h1>
+  <hr class="header-rule"/>
+</header>
+
+<div class="dancers-grid">
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/nivedita_srinivasan.jpg" alt="Nivedita Srinivasan"/></div>
+    <div class="dancer-name">Nivedita Srinivasan</div>
+    <div class="dancer-role">Bharatanatyam Co-Captain</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/bhoomika_khatri.jpg" alt="Bhoomika Khatri"/></div>
+    <div class="dancer-name">Bhoomika Khatri</div>
+    <div class="dancer-role">Kathak Captain</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/minaakshi_gentela.jpg" alt="Minaakshi Gentela"/></div>
+    <div class="dancer-name">Minaakshi Gentela</div>
+    <div class="dancer-role">Kuchipudi Captain</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/rhea_sharma.jpg" alt="Rhea Sharma"/></div>
+    <div class="dancer-name">Rhea Sharma</div>
+    <div class="dancer-role">Bharatanatyam Co-Captain</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/anshika_rath.jpg" alt="Anshika Rath"/></div>
+    <div class="dancer-name">Anshika Rath</div>
+    <div class="dancer-role">Odissi Captain</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/samitha_jonnalagadda.jpg" alt="Samitha Jonnalagadda"/></div>
+    <div class="dancer-name">Samitha Jonnalagadda</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/rachana_gurudu.jpg" alt="Rachana Gurudu"/></div>
+    <div class="dancer-name">Rachana Gurudu</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/gauri_nair.jpg" alt="Gauri Nair"/></div>
+    <div class="dancer-name">Gauri Nair</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/neera_ramanatham.jpg" alt="Netra Ramanatham"/></div>
+    <div class="dancer-name">Netra Ramanatham</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/janani_rajan.jpg" alt="Janani Rajan"/></div>
+    <div class="dancer-name">Janani Rajan</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/srila_munukutla.jpg" alt="Srila Munukutla"/></div>
+    <div class="dancer-name">Srila Munukutla</div>
+    <div class="dancer-role">Kuchipudi</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/sahana_shivakumar.jpg" alt="Sahana Shivakumar"/></div>
+    <div class="dancer-name">Sahana Shivakumar</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/dhriti_tattari.jpg" alt="Dhriti Tattari"/></div>
+    <div class="dancer-name">Dhriti Tattari</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/teju_sanikommu.jpg" alt="Teju Sanikommu"/></div>
+    <div class="dancer-name">Teju Sanikommu</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/ananya_velan.jpg" alt="Ananya Velan"/></div>
+    <div class="dancer-name">Ananya Velan</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/viranshi_vira.jpg" alt="Viranshi Vira"/></div>
+    <div class="dancer-name">Viranshi Vira</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/isha_daxini.jpg" alt="Isha Daxini"/></div>
+    <div class="dancer-name">Isha Daxini</div>
+    <div class="dancer-role">Kathak</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/eshita_kadiri.jpg" alt="Eshita Kadiri"/></div>
+    <div class="dancer-name">Eshita Kadiri</div>
+    <div class="dancer-role">Kuchipudi</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/amulya_buddha.jpg" alt="Amulya Buddha"/></div>
+    <div class="dancer-name">Amulya Buddha</div>
+    <div class="dancer-role">Kuchipudi</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/sahaara_enjeem.jpg" alt="Sahasra Enjeeti"/></div>
+    <div class="dancer-name">Sahasra Enjeeti</div>
+    <div class="dancer-role">Kuchipudi</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/deekshanjani_tummula.jpg" alt="Deekshanjani Tummula"/></div>
+    <div class="dancer-name">Deekshanjani Tummula</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/rishika_santhebennur.jpg" alt="Rishika Santhebennur"/></div>
+    <div class="dancer-name">Rishika Santhebennur</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/deetya_narsipur.jpg" alt="Deetya Narsipur"/></div>
+    <div class="dancer-name">Deetya Narsipur</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/srilalitha_nair.jpg" alt="Srilalitha Nair"/></div>
+    <div class="dancer-name">Srilalitha Nair</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/priya_garg.jpg" alt="Priya Garg"/></div>
+    <div class="dancer-name">Priya Garg</div>
+    <div class="dancer-role">Kathak</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/prisha_parmar.jpg" alt="Prisha Parmar"/></div>
+    <div class="dancer-name">Prisha Parmar</div>
+    <div class="dancer-role">Kathak</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/nandini_goel.jpg" alt="Nandini Goel"/></div>
+    <div class="dancer-name">Nandini Goel</div>
+    <div class="dancer-role">Kathak</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/pranavi_annaluru.jpg" alt="Pranavi Annaluru"/></div>
+    <div class="dancer-name">Pranavi Annaluru</div>
+    <div class="dancer-role">Kuchipudi</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/anu_dhananjit.jpg" alt="Anu Dhananjay"/></div>
+    <div class="dancer-name">Anu Dhananjay</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/chandra_kadali.jpg" alt="Chandra Kadali"/></div>
+    <div class="dancer-name">Chandra Kadali</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/sufiya_kaul.jpg" alt="Sufiya Kaul"/></div>
+    <div class="dancer-name">Sufiya Kaul</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/meha_sekaran.jpg" alt="Meha Sekaran"/></div>
+    <div class="dancer-name">Meha Sekaran</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/smera_arkalgud.jpg" alt="Smera Arkalgud"/></div>
+    <div class="dancer-name">Smera Arkalgud</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/prithika_padmanabhan.jpg" alt="Prithika Padmanabhan"/></div>
+    <div class="dancer-name">Prithika Padmanabhan</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/sandra_haridas.jpg" alt="Sandra Haridas"/></div>
+    <div class="dancer-name">Sandra Haridas</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+  <div class="dancer-card">
+    <div class="img-wrap"><img src="dancers/rhea_kandlapally.jpg" alt="Rhea Kandarapally"/></div>
+    <div class="dancer-name">Rhea Kandarapally</div>
+    <div class="dancer-role">Bharatanatyam</div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 NRITYA &amp; NAADAM · Case Western Reserve University
+</footer>
+
+</body>
+</html>
