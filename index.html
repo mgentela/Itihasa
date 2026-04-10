@@ -3,324 +3,165 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ithihasa Anubhava — CWRU Nritya & Naadam</title>
-  <meta name="description" content="CWRU's NRITYA and NAADAM present Ithihasa Anubhava — Stories of the Gods, brought to the stage. In Eldred Hall, 3–5 PM."/>
-
+  <title>Ithihasa Anubhava – NRITYA &amp; NAADAM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <style>
-    /* ── XB Niloofar: declare local; drop XBNiloofar.ttf in this folder to activate ── */
-    @font-face {
-      font-family: 'XB Niloofar';
-      src: url('XBNiloofar.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
 
     body {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      /* Poster as full-page background, covers viewport, no repeat */
-      background-image: url('bg.png');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-color: #1a0840;
       min-height: 100vh;
-      color: #fef9f0;
+      font-family: 'Crimson Text', Georgia, serif;
+      color: #ecbad2;
+      background: #1a0a0a;
     }
 
-    /* Dark overlay for legibility */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 2, 22, 0.32);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    nav, .page-wrap, footer { position: relative; z-index: 1; }
-
-    /* ── NAV ── */
+    /* NAV */
     nav {
       background: #b83c0c;
-      padding: 0.6rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0.6rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.55);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
-
-    .nav-logo {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fef9f0;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
     .nav-links a {
-      font-family: 'XB Niloofar', 'Crimson Text', serif;
-      font-size: 1rem;
-      color: #fef9f0;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: color .2s;
+      color: #ecbad2;
+      text-decoration: none;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
     }
-    .nav-links a:hover { color: #f5d78e; }
+    .nav-links a:hover { opacity: 0.75; }
 
-    /* hamburger */
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; background: none; border: none; padding: 4px;
-    }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #fef9f0; }
-
-    /* ── PAGE LAYOUT ── */
-    .page-wrap {
-      min-height: calc(100vh - 50px);
+    /* HERO */
+    .hero {
+      width: 100%;
+      min-height: calc(100vh - 64px);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 5vh 2rem 6vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center top;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 0, 5, 0.45);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
       text-align: center;
+      padding: 3rem 2rem;
+      max-width: 700px;
     }
-
-    /* ── HERO TEXT ── */
-    .presenter-line {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: #fef9f0;
-      letter-spacing: 0.06em;
-      line-height: 1.7;
-      margin-bottom: 0.6rem;
-      /* subtle text shadow so it reads over any bg region */
-      text-shadow: 0 1px 12px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.4);
-    }
-
-    .main-title {
+    .hero-content h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: clamp(3.5rem, 10vw, 6.5rem);
-      font-weight: 700;
-      color: #fef9f0;
-      line-height: 1.05;
-      text-shadow: 0 3px 32px rgba(0,0,0,0.45), 0 0 60px rgba(0,0,0,0.25);
+      font-size: clamp(3rem, 9vw, 6rem);
+      color: #ecbad2;
+      text-shadow: 0 3px 20px rgba(0,0,0,0.6);
+      line-height: 1.1;
       margin-bottom: 0.5rem;
     }
-
-    .tagline {
+    .hero-content .subtitle {
       font-family: 'Marck Script', cursive;
-      font-size: clamp(1.1rem, 3vw, 1.65rem);
-      color: #fef9f0;
-      font-style: italic;
-      text-shadow: 0 1px 14px rgba(0,0,0,0.65);
-      margin-bottom: 0.3rem;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: #ecbad2;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
-
-    /* ── VINE ORNAMENT ── */
-    .vine {
-      display: block;
-      width: clamp(200px, 35vw, 300px);
-      margin: 1.2rem auto 1.4rem;
-      opacity: 0.75;
+    .hero-content .details {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #ecbad2;
+      opacity: 0.85;
+      line-height: 1.8;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
     }
-
-    .location-line {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      color: #fef9f0;
-      letter-spacing: 0.05em;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.7);
-      margin-bottom: 4rem;
-    }
-
-    /* ── LOGOS ROW ── */
-    .logos-row {
+    .hero-btns {
+      margin-top: 2rem;
       display: flex;
-      align-items: center;
+      gap: 1rem;
       justify-content: center;
-      gap: clamp(2rem, 8vw, 6rem);
-      margin-top: 1rem;
       flex-wrap: wrap;
     }
-
-    .logo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.75rem;
+      border-radius: 30px;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
     }
+    .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    .btn-primary { background: #b83c0c; color: #ecbad2; }
+    .btn-secondary { background: transparent; border: 2px solid #ecbad2; color: #ecbad2; }
 
-    .nritya-logo {
-      width: clamp(130px, 18vw, 200px);
-      height: auto;
-      /* drop-shadow to pop the logo off the poster */
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6));
-    }
-
-    .naadam-logo {
-      width: clamp(160px, 22vw, 260px);
-      height: auto;
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
-    }
-
-    /* ── ORG TEXT BELOW LOGOS ── */
-    .org-text-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 860px;
-      margin: 2.5rem auto 0;
-      text-align: center;
-    }
-
-    .org-text p {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(0.85rem, 1.6vw, 0.96rem);
-      color: rgba(255,249,240,0.92);
-      line-height: 1.7;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.7);
-      margin-bottom: 0.7rem;
-    }
-
-    /* ── FOOTER ── */
     footer {
-      position: relative;
-      z-index: 1;
-      background: rgba(8,2,22,0.75);
-      border-top: 2px solid #b83c0c;
+      background: rgba(0,0,0,0.6);
       text-align: center;
-      padding: 1.1rem 1rem;
-      font-size: 0.82rem;
-      color: rgba(255,249,240,0.5);
-      font-family: 'XB Niloofar', 'Crimson Text', serif;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .hamburger { display: flex; }
-      .nav-links {
-        display: none; flex-direction: column; gap: 0.7rem;
-        position: absolute; top: 100%; right: 0;
-        background: #b83c0c; padding: 1rem 1.5rem; min-width: 180px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-      }
-      .nav-links.open { display: flex; }
-      .org-text-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .logos-row { gap: 2rem; }
-    }
-
-    @media (max-width: 400px) {
-      .logos-row { flex-direction: column; gap: 1.5rem; }
+      padding: 1.25rem 1rem;
+      font-size: 0.85rem;
+      color: #ecbad2;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">Ithihasa Anubhava</a>
-  <button class="hamburger" aria-label="Toggle menu"
-    onclick="this.nextElementSibling.classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-logos">
+    <img src="nritya_logo_transparent.png" alt="NRITYA logo"/>
+    <img src="naadam_logo_pink.png" alt="NAADAM logo"/>
+  </div>
   <ul class="nav-links">
-    <li><a href="musicians.html">Musicians</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="dancers.html">Dancers</a></li>
+    <li><a href="musicians.html">Musicians</a></li>
     <li><a href="program.html">Program</a></li>
-    <li><a href="support.html">Support Us!</a></li>
+    <li><a href="support.html">Support Us</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="page-wrap">
-
-  <p class="presenter-line">CWRU's NRITYA and NAADAM present</p>
-
-  <h1 class="main-title">Ithihasa Anubhava</h1>
-
-  <p class="tagline">Stories of the Gods, brought to the stage</p>
-
-  <!-- Decorative vine ornament -->
-  <svg class="vine" viewBox="0 0 300 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 13 Q14 4 24 13 Q14 22 4 13Z"   fill="rgba(255,249,240,0.78)"/>
-    <line x1="23" y1="13" x2="44" y2="13"       stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M44 13 Q66 4 88 13"                 stroke="rgba(255,249,240,0.58)" stroke-width="1.3" fill="none"/>
-    <path d="M65 7 Q72 2 79 7 Q72 12 65 7Z"     fill="rgba(255,249,240,0.52)"/>
-    <line x1="88" y1="13" x2="130" y2="13"      stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <rect x="126" y="9" width="8" height="8" transform="rotate(45 130 13)" fill="rgba(255,249,240,0.88)"/>
-    <line x1="134" y1="13" x2="176" y2="13"     stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M176 13 Q198 4 220 13"              stroke="rgba(255,249,240,0.58)" stroke-width="1.3" fill="none"/>
-    <path d="M195 7 Q202 2 209 7 Q202 12 195 7Z" fill="rgba(255,249,240,0.52)"/>
-    <line x1="220" y1="13" x2="242" y2="13"     stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M296 13 Q286 4 276 13 Q286 22 296 13Z" fill="rgba(255,249,240,0.78)"/>
-  </svg>
-
-  <p class="location-line">In Eldred Hall from 3–5 PM</p>
-
-  <!-- LOGOS -->
-  <div class="logos-row">
-
-    <!-- Nritya -->
-    <div class="logo-block">
-      <img src="nritya_logo_transparent.png" alt="CWRU Nritya" class="nritya-logo"/>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Ithihasa Anubhava</h1>
+    <div class="subtitle">An Evening of Classical Indian Dance &amp; Music</div>
+    <div class="details">
+      Presented by NRITYA &amp; NAADAM<br/>
+      Case Western Reserve University
     </div>
-
-    <!-- Naadam -->
-    <div class="logo-block">
-      <img src="naadam_logo_pink.png" alt="Naadam" class="naadam-logo"/>
-    </div>
-
-  </div>
-
-  <!-- ORG DESCRIPTIONS -->
-  <div class="org-text-grid">
-    <div class="org-text">
-      <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team
-        with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions
-        with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy
-        events like Spartanthon, Nritya is a vibrant part of the community. They take pride in
-        performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural
-        History, with pieces that portray meaningful stories from Hindu mythology, historical events,
-        and contemporary themes.</p>
-      <p>This past year, Nritya made their return to the national competition scene after several
-        years and placed 3rd at Motor City Dhamaal.</p>
-    </div>
-    <div class="org-text">
-      <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team
-        with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions
-        with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy
-        events like Spartanthon, Nritya is a vibrant part of the community. They take pride in
-        performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural
-        History, with pieces that portray meaningful stories from Hindu mythology, historical events,
-        and contemporary themes.</p>
-      <p>This past year, Nritya made their return to the national competition scene after several
-        years and placed 3rd at Motor City Dhamaal.</p>
+    <div class="hero-btns">
+      <a href="program.html" class="btn btn-primary">View Program</a>
+      <a href="support.html" class="btn btn-secondary">Support Us</a>
     </div>
   </div>
+</section>
 
-</div>
-
-<!-- FOOTER -->
 <footer>
-  <p>© 2025 CWRU Nritya &amp; Naadam &nbsp;·&nbsp; Ithihasa Anubhava &nbsp;·&nbsp; Eldred Hall, Case Western Reserve University</p>
+  &copy; 2025 NRITYA &amp; NAADAM · Case Western Reserve University
 </footer>
 
 </body>

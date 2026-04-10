@@ -3,212 +3,149 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Support Us — Ithihasa Anubhava</title>
+  <title>Support Us – Ithihasa Anubhava</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <style>
-    @font-face { font-family:'XB Niloofar'; src:url('XBNiloofar.ttf') format('truetype'); }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family:'XB Niloofar','Crimson Text',Georgia,serif;
-      min-height:100vh;
-      color:#ecbad2;
-      background: linear-gradient(180deg,
-        #200f3e 0%,
-        #3c215f 30%,
-        #96135a 65%,
-        #ff7918 100%
-      );
-      background-attachment: fixed;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #200f3e 0%, #3c215f 30%, #96135a 70%, #ff7918 100%);
+      font-family: 'Crimson Text', serif;
+      color: #ecbad2;
     }
 
-    /* NAV */
-    nav{background:#b83c0c;padding:0.6rem 2rem;display:flex;align-items:center;
-      justify-content:space-between;position:sticky;top:0;z-index:100;
-      box-shadow:0 2px 14px rgba(0,0,0,0.55);}
-    .nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;font-weight:400;
-      color:#ecbad2;text-decoration:underline;text-underline-offset:3px;}
-    .nav-links{display:flex;gap:2rem;list-style:none;}
-    .nav-links a{font-family:'XB Niloofar','Crimson Text',serif;font-size:1.05rem;
-      color:#ecbad2;text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
-    .nav-links a:hover,.nav-links a.active{color:#ffd6e8;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-    .hamburger span{display:block;width:24px;height:2px;background:#ecbad2;}
+    nav {
+      background: #b83c0c;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: #ecbad2;
+      text-decoration: none;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 0.75; }
 
-    /* HERO */
-    .support-hero {
-      text-align:center;
-      padding:5rem 2rem 4rem;
+    .page-header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
     }
-    .support-hero h1 {
-      font-family:'Dancing Script',cursive;
-      font-weight:400;
-      font-size:clamp(3rem,10vw,5rem);
-      color:#ecbad2;
-      margin-bottom:1.2rem;
-      text-shadow:0 2px 20px rgba(0,0,0,0.4);
+    .page-header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: #ecbad2;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.4);
     }
-    .support-hero p {
-      font-family:'XB Niloofar','Crimson Text',serif;
-      font-size:1.2rem;
-      max-width:560px;
-      margin:0 auto 2rem;
-      color:#ecbad2;
-      line-height:1.7;
-    }
-
-    /* CARDS SECTION */
-    .cards-section {
-      max-width:800px;
-      margin:0 auto;
-      padding:0 2rem 3rem;
-    }
-
-    .section-title {
-      font-family:'Marck Script',cursive;
-      font-weight:400;
-      font-size:clamp(1.6rem,4vw,2.2rem);
-      color:#ecbad2;
-      text-align:center;
-      margin-bottom:2rem;
-      text-shadow:0 1px 10px rgba(0,0,0,0.4);
+    .page-header p {
+      font-size: 1.1rem;
+      color: #ecbad2;
+      opacity: 0.85;
+      margin-top: 0.5rem;
     }
 
-    .cards-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-      gap:1.8rem;
-      margin-bottom:3rem;
+    .content {
+      max-width: 680px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+      text-align: center;
     }
 
-    .card {
-      text-align:center;
-      padding:1.8rem 1.2rem;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(236,186,210,0.25);
-      border-radius:6px;
-      backdrop-filter:blur(4px);
-    }
-    .card .icon {font-size:2.5rem;margin-bottom:0.8rem;}
-    .card h3 {
-      font-family:'Dancing Script',cursive;
-      font-weight:400;
-      font-size:1.3rem;
-      color:#ecbad2;
-      margin-bottom:0.5rem;
-    }
-    .card p {
-      font-family:'XB Niloofar','Crimson Text',serif;
-      font-size:1.05rem;
-      color:rgba(236,186,210,0.85);
-      line-height:1.65;
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ecbad2;
+      margin-bottom: 1.5rem;
     }
 
-    .closing-text {
-      font-family:'XB Niloofar','Crimson Text',serif;
-      font-size:1.15rem;
-      color:#ecbad2;
-      text-align:center;
-      max-width:560px;
-      margin:0 auto 2.5rem;
-      line-height:1.7;
+    .donate-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.85rem 2.5rem;
+      background: #b83c0c;
+      color: #ecbad2;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .donate-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+    h2 {
+      font-family: 'Marck Script', cursive;
+      font-size: 1.8rem;
+      color: #ecbad2;
+      margin: 2.5rem 0 0.75rem;
     }
 
-    /* DONATE BUTTON */
-    .btn-donate {
-      display:inline-block;
-      background:#ecbad2;
-      color:#200f3e;
-      font-family:'XB Niloofar','Crimson Text',serif;
-      font-weight:600;
-      font-size:1.15rem;
-      padding:0.8rem 2.8rem;
-      border-radius:3px;
-      letter-spacing:0.04em;
-      transition:background .2s, transform .2s;
-      text-decoration:none;
-    }
-    .btn-donate:hover{background:#ffd6e8;transform:translateY(-2px);}
-
-    .btn-center{text-align:center;margin-top:1rem;}
-
-    /* FOOTER */
-    footer{background:rgba(20,5,30,0.8);border-top:2px solid #b83c0c;
-      text-align:center;padding:1.2rem 1rem;font-size:0.9rem;
-      color:rgba(236,186,210,0.5);font-family:'XB Niloofar','Crimson Text',serif;}
-
-    @media(max-width:600px){
-      .hamburger{display:flex;}
-      .nav-links{display:none;flex-direction:column;gap:0.7rem;position:absolute;top:100%;right:0;
-        background:#b83c0c;padding:1rem 1.5rem;min-width:180px;box-shadow:0 4px 16px rgba(0,0,0,0.5);}
-      .nav-links.open{display:flex;}
-      .cards-grid{grid-template-columns:1fr;}
+    footer {
+      background: rgba(0,0,0,0.3);
+      text-align: center;
+      padding: 1.25rem 1rem;
+      font-size: 0.85rem;
+      color: #ecbad2;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Ithihasa Anubhava</a>
-  <button class="hamburger" aria-label="Toggle menu"
-    onclick="this.nextElementSibling.classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-logos">
+    <img src="nritya_logo_transparent.png" alt="NRITYA logo"/>
+    <img src="naadam_logo_pink.png" alt="NAADAM logo"/>
+  </div>
   <ul class="nav-links">
-    <li><a href="musicians.html">Musicians</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="dancers.html">Dancers</a></li>
+    <li><a href="musicians.html">Musicians</a></li>
     <li><a href="program.html">Program</a></li>
-    <li><a href="support.html" class="active">Support Us!</a></li>
+    <li><a href="support.html">Support Us</a></li>
   </ul>
 </nav>
 
-<section class="support-hero">
-  <h1>Support Us!</h1>
+<header class="page-header">
+  <h1>Support Us</h1>
+  <p>Help us bring Ithihasa Anubhava to life</p>
+</header>
+
+<div class="content">
   <p>
-    Your generosity helps CWRU Nritya and Naadam continue bringing the beauty of
-    Indian classical music and dance to our community. Every contribution — big or small —
-    makes a meaningful difference.
-  </p>
-  <a href="https://cglink.me/2cS/r2279211" target="_blank" class="btn-donate">Donate Now</a>
-</section>
-
-<div class="cards-section">
-  <h2 class="section-title">Why Your Support Matters</h2>
-
-  <div class="cards-grid">
-    <div class="card">
-      <div class="icon">🎭</div>
-      <h3>Live Performances</h3>
-      <p>Your donations fund costumes, sets, and production costs to bring these stories to life on stage.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🎶</div>
-      <h3>Live Music</h3>
-      <p>We are proud to perform with live musicians — an experience that transforms every performance.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🎓</div>
-      <h3>Arts Education</h3>
-      <p>Funds support workshops, guest artists, and training that help our students grow as performers.</p>
-    </div>
-  </div>
-
-  <p class="closing-text">
-    All proceeds go directly toward supporting CWRU Nritya and Naadam's mission to
-    preserve and promote Indian classical arts in the greater Cleveland community.
+    NRITYA and NAADAM are student-run classical Indian dance and music organizations at Case Western Reserve University. Your generous support helps us cover production costs, costume expenses, and live musician fees — making this show possible.
   </p>
 
-  <div class="btn-center">
-    <a href="https://cglink.me/2cS/r2279211" target="_blank" class="btn-donate">Support Ithihasa Anubhava</a>
-  </div>
+  <p>
+    Every contribution, big or small, goes directly toward creating a memorable evening of classical Indian arts for our campus and greater Cleveland community.
+  </p>
+
+  <a href="https://cglink.me/2cS/r2279211" class="donate-btn" target="_blank" rel="noopener">
+    Donate Now
+  </a>
+
+  <h2>Other Ways to Help</h2>
+  <p>
+    Spread the word by sharing our event with friends, family, and colleagues. Follow NRITYA and NAADAM on social media and help us build our audience. Your enthusiasm and support mean everything to our dancers and musicians.
+  </p>
 </div>
 
 <footer>
-  <p>© 2025 CWRU Nritya &amp; Naadam &nbsp;·&nbsp; Ithihasa Anubhava</p>
+  &copy; 2025 NRITYA &amp; NAADAM · Case Western Reserve University
 </footer>
-
 </body>
 </html>

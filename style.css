@@ -1,512 +1,92 @@
-/* ─── Google Fonts ─────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap');
-
-/* ─── CSS Variables ─────────────────────────────────────────────── */
-:root {
-  --deep-indigo:   #1a0840;
-  --violet:        #3d1178;
-  --purple:        #6b21a8;
-  --magenta:       #a21caf;
-  --rose:          #c2185b;
-  --coral:         #d4614a;
-  --terracotta:    #c1440e;
-  --orange:        #e8820c;
-  --gold:          #f0b429;
-
-  --nav-bg:        #c1440e;
-  --nav-text:      #fef3c7;
-  --nav-hover:     #f0b429;
-
-  --hero-gradient: linear-gradient(180deg,
-    #1a0840 0%,
-    #3d1178 25%,
-    #6b21a8 45%,
-    #a21caf 60%,
-    #c2185b 75%,
-    #d4614a 88%,
-    #e8820c 100%);
-
-  --section-gradient: linear-gradient(180deg,
-    #3d1178 0%,
-    #6b21a8 40%,
-    #a21caf 70%,
-    #c2185b 100%);
-
-  --orange-section: linear-gradient(180deg, #c1440e 0%, #e8820c 100%);
-
-  --text-cream: #fef9f0;
-  --text-gold:  #f0b429;
-  --text-white: #ffffff;
-
-  --divider-color: rgba(240, 180, 41, 0.6);
-}
-
-/* ─── Reset & Base ──────────────────────────────────────────────── */
+/* ── SHARED STYLES — musicians.html & program.html ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-
 body {
-  font-family: 'Crimson Text', Georgia, serif;
-  background: var(--deep-indigo);
-  color: var(--text-cream);
   min-height: 100vh;
-  font-size: 17px;
-  line-height: 1.7;
+  font-family: 'Crimson Text', Georgia, serif;
+  color: #1a1a2e;
+  background: #fdf6ee;
 }
 
-img { max-width: 100%; display: block; }
-
-a { color: inherit; text-decoration: none; }
-
-/* ─── Navigation ────────────────────────────────────────────────── */
+/* NAV */
 nav {
-  background: var(--nav-bg);
-  padding: 0.6rem 2rem;
+  background: #b83c0c;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
-
-.nav-logo {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text-cream);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  letter-spacing: 0.02em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
+.nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+.nav-logos img { height: 48px; width: auto; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
 .nav-links a {
+  color: #ecbad2;
+  text-decoration: none;
   font-family: 'Crimson Text', serif;
   font-size: 1.05rem;
-  color: var(--text-cream);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s;
   letter-spacing: 0.03em;
+  transition: opacity 0.2s;
 }
+.nav-links a:hover { opacity: 0.75; }
 
-.nav-links a:hover,
-.nav-links a.active { color: var(--nav-hover); }
-
-/* Hamburger (mobile) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--text-cream);
-  transition: all 0.3s;
-}
-
-/* ─── Hero Section ──────────────────────────────────────────────── */
-.hero {
-  background: var(--hero-gradient);
+/* PAGE HEADER */
+.page-header {
   text-align: center;
-  padding: 4rem 1.5rem 3rem;
-  position: relative;
-  overflow: hidden;
+  padding: 3rem 1rem 1.5rem;
 }
-
-/* star-sparkle background */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle 1px at 15% 20%, rgba(255,255,255,0.8) 0%, transparent 100%),
-    radial-gradient(circle 1px at 35% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
-    radial-gradient(circle 1px at 55% 18%, rgba(255,255,255,0.8) 0%, transparent 100%),
-    radial-gradient(circle 1px at 70% 8%,  rgba(255,255,255,0.5) 0%, transparent 100%),
-    radial-gradient(circle 1px at 85% 22%, rgba(255,255,255,0.7) 0%, transparent 100%),
-    radial-gradient(circle 2px at 25% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
-    radial-gradient(circle 1px at 45% 42%, rgba(255,255,255,0.5) 0%, transparent 100%),
-    radial-gradient(circle 1px at 80% 38%, rgba(255,255,255,0.4) 0%, transparent 100%),
-    radial-gradient(circle 1px at 10% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
-    radial-gradient(circle 1px at 90% 50%, rgba(255,255,255,0.4) 0%, transparent 100%);
-  pointer-events: none;
+.page-header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: #b83c0c;
 }
-
-.hero-subtitle {
-  font-family: 'Crimson Text', serif;
+.page-header p {
   font-size: 1.1rem;
-  color: var(--text-cream);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.hero-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 10vw, 5.5rem);
-  color: var(--text-cream);
-  line-height: 1.1;
-  margin: 0.3rem 0;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-}
-
-.hero-tagline {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  color: var(--text-cream);
-  font-style: italic;
-  margin: 0.5rem 0 1.5rem;
-}
-
-.hero-location {
-  font-family: 'Crimson Text', serif;
-  font-size: 1.15rem;
-  color: var(--text-cream);
-  letter-spacing: 0.03em;
-}
-
-/* Decorative divider (vine/twig style) */
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem auto;
-  gap: 0.5rem;
-  opacity: 0.7;
-}
-
-.divider::before,
-.divider::after {
-  content: '————◆————';
-  color: var(--divider-color);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.divider-line {
-  width: 100%;
-  max-width: 400px;
-  height: 1px;
-  background: var(--divider-color);
-  margin: 0.8rem auto;
-}
-
-/* ─── Section Styles ────────────────────────────────────────────── */
-.section-purple {
-  background: var(--section-gradient);
-  padding: 3rem 1.5rem;
-}
-
-.section-orange {
-  background: var(--orange-section);
-  padding: 3rem 1.5rem;
-}
-
-.section-deep {
-  background: linear-gradient(180deg, #1a0840, #3d1178);
-  padding: 3rem 1.5rem;
-}
-
-/* ─── Page Titles ───────────────────────────────────────────────── */
-.page-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: var(--text-cream);
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.section-heading {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  color: var(--text-cream);
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* ─── Two-column org info (home) ────────────────────────────────── */
-.org-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 2rem auto 0;
-}
-
-.org-card {
-  text-align: center;
-  color: var(--text-cream);
-}
-
-.org-card img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin: 0 auto 1rem;
-  filter: brightness(0) invert(1);
-}
-
-.org-card .org-name {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.org-card p {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(255,249,240,0.9);
-}
-
-/* ─── Person Cards (Musicians / Dancers) ───────────────────────── */
-.person-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.5rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.person-card {
-  text-align: center;
-}
-
-.person-card img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 2px solid rgba(255,255,255,0.15);
-}
-
-/* placeholder when no photo */
-.person-card .photo-placeholder {
-  width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, #7c3aed55, #db2777aa);
-  border-radius: 4px;
-  border: 2px solid rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: rgba(255,255,255,0.4);
-}
-
-.person-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-cream);
+  color: #555;
   margin-top: 0.5rem;
 }
 
-.person-role {
-  font-family: 'Crimson Text', serif;
-  font-style: italic;
-  font-size: 0.88rem;
-  color: rgba(255,249,240,0.75);
+/* CONTENT */
+.content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
 }
 
-/* Featured musician (large) */
-.featured-musician {
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
-}
-
-.featured-musician .feat-inner {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.featured-musician img,
-.featured-musician .photo-placeholder {
-  width: 200px;
-  flex-shrink: 0;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 2px solid rgba(255,255,255,0.2);
-}
-
-.feat-text h3 {
-  font-family: 'Dancing Script', cursive;
+h2 {
+  font-family: 'Marck Script', cursive;
   font-size: 1.8rem;
-  color: var(--text-cream);
-  margin-bottom: 0.5rem;
+  color: #b83c0c;
+  margin: 2rem 0 0.75rem;
 }
 
-.feat-text p {
-  font-size: 0.95rem;
-  color: rgba(255,249,240,0.9);
-  line-height: 1.65;
-}
+p { line-height: 1.7; margin-bottom: 1rem; font-size: 1.05rem; }
 
-/* ─── Program Items ─────────────────────────────────────────────── */
-.program-item {
-  max-width: 760px;
-  margin: 0 auto 3rem;
-  text-align: center;
-}
-
-.program-item .piece-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: var(--text-cream);
-  line-height: 1.1;
-}
-
-.program-item .piece-meta {
-  font-family: 'Dancing Script', cursive;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
   font-size: 1rem;
-  color: rgba(255,249,240,0.8);
-  margin: 0.2rem 0 0.8rem;
 }
-
-.program-item .piece-credits {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0.5rem 0 1rem;
-}
-
-.program-item .credit-block h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-gold);
-  margin-bottom: 0.2rem;
-}
-
-.program-item .credit-block p {
-  font-size: 0.95rem;
-  color: var(--text-cream);
-  line-height: 1.4;
-}
-
-.program-item .piece-description {
-  font-size: 0.95rem;
-  color: rgba(255,249,240,0.85);
+th {
+  background: #b83c0c;
+  color: #ecbad2;
+  padding: 0.6rem 1rem;
   text-align: left;
-  line-height: 1.7;
-  margin: 0.5rem auto 0;
-  max-width: 640px;
-}
-
-.program-item .piece-img {
-  width: 100px;
-  margin: 0 auto 0.8rem;
-}
-
-/* ─── Announcements / Etiquette ────────────────────────────────── */
-.etiquette-box {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  padding: 1.5rem 2rem;
-}
-
-.etiquette-box p, .etiquette-box li {
-  font-size: 0.95rem;
-  color: rgba(255,249,240,0.9);
-  margin-bottom: 0.4rem;
-}
-
-.etiquette-box ul { padding-left: 1.2rem; }
-.etiquette-box li { margin-bottom: 0.3rem; }
-
-/* ─── Support Page ──────────────────────────────────────────────── */
-.support-hero {
-  background: var(--hero-gradient);
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.support-hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 10vw, 5rem);
-  color: var(--text-cream);
-  margin-bottom: 1rem;
-}
-
-.support-hero p {
-  font-size: 1.1rem;
-  max-width: 560px;
-  color: rgba(255,249,240,0.9);
-  margin-bottom: 1.5rem;
-}
-
-.btn-support {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--deep-indigo);
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.75rem 2.5rem;
-  border-radius: 2px;
-  letter-spacing: 0.05em;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.btn-support:hover {
-  background: #ffd166;
-  transform: translateY(-1px);
-}
-
-/* ─── Footer ────────────────────────────────────────────────────── */
-footer {
-  background: var(--deep-indigo);
-  border-top: 2px solid var(--terracotta);
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.85rem;
-  color: rgba(255,249,240,0.5);
   font-family: 'Crimson Text', serif;
+  font-weight: 600;
 }
+td { padding: 0.55rem 1rem; border-bottom: 1px solid #e0d0c0; }
+tr:nth-child(even) td { background: #fdf0e8; }
 
-/* ─── Utilities ─────────────────────────────────────────────────── */
-.container { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
-.text-center { text-align: center; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-
-/* ─── Responsive ────────────────────────────────────────────────── */
-@media (max-width: 640px) {
-  .nav-links { display: none; flex-direction: column; gap: 0.8rem; }
-  .nav-links.open { display: flex; }
-  .hamburger { display: flex; }
-
-  .org-grid { grid-template-columns: 1fr; }
-
-  .featured-musician .feat-inner { flex-direction: column; }
-  .featured-musician img,
-  .featured-musician .photo-placeholder { width: 100%; }
-
-  .person-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+footer {
+  background: #1a1a2e;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+  color: #ecbad2;
+  opacity: 0.85;
 }
