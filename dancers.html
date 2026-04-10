@@ -14,12 +14,16 @@
     body{
       font-family:'XB Niloofar','Crimson Text',Georgia,serif;
       min-height:100vh; color:#fef9f0;
-      background-image:url('bg.png');
-      background-size:cover; background-position:center top;
-      background-repeat:no-repeat; background-attachment:fixed;
-      background-color:#1a0840;
+      background: linear-gradient(180deg,
+        #690058 0%,
+        #620e5a 22%,
+        #bd4981 55%,
+        #dd7122 80%,
+        #fb9062 100%
+      );
+      background-attachment: fixed;
     }
-    body::before{content:'';position:fixed;inset:0;background:rgba(8,2,22,0.45);pointer-events:none;z-index:0;}
+    body::before{content:'';position:fixed;inset:0;background:rgba(0,0,0,0.15);pointer-events:none;z-index:0;}
     nav,main,footer{position:relative;z-index:1;}
 
     /* NAV */
@@ -45,14 +49,16 @@
     /* GRID */
     .dancer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem 1.2rem;}
     .dancer-card{text-align:center;}
-    .dancer-card img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top center;
-      border-radius:4px;border:1.5px solid rgba(255,255,255,0.18);display:block;}
+    .dancer-card .img-wrap{width:100%;aspect-ratio:1;border-radius:4px;
+      border:1.5px solid rgba(255,255,255,0.18);overflow:hidden;display:block;}
+    .dancer-card img{width:100%;height:100%;object-fit:cover;object-position:center 18%;
+      display:block;transform:scale(1.08);transform-origin:center 20%;}
     .d-name{font-family:'Marck Script',cursive;font-size:0.92rem;color:#fef9f0;
       margin-top:0.45rem;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,0.7);}
     .d-role{font-family:'XB Niloofar','Crimson Text',serif;font-size:0.78rem;
       font-style:italic;color:rgba(255,249,240,0.7);text-shadow:0 1px 4px rgba(0,0,0,0.6);}
 
-    footer{background:rgba(8,2,22,0.78);border-top:2px solid #b83c0c;text-align:center;
+    footer{background:rgba(40,0,35,0.82);border-top:2px solid #b83c0c;text-align:center;
       padding:1.2rem 1rem;font-size:0.82rem;color:rgba(255,249,240,0.45);
       font-family:'XB Niloofar','Crimson Text',serif;}
 
@@ -90,163 +96,163 @@
 
     <!-- ROW 1 — Captains -->
     <div class="dancer-card">
-      <img src="dancers/nivedita_srinivasan.jpg" alt="Nivedita Srinivasan"/>
+      <div class="img-wrap"><img src="dancers/nivedita_srinivasan.jpg" alt="Nivedita Srinivasan"/></div>
       <p class="d-name">Nivedita Srinivasan</p><p class="d-role">Bharatanatyam Co-Captain</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/bhoomika_khatri.jpg" alt="Bhoomika Khatri"/>
+      <div class="img-wrap"><img src="dancers/bhoomika_khatri.jpg" alt="Bhoomika Khatri"/></div>
       <p class="d-name">Bhoomika Khatri</p><p class="d-role">Kathak Captain</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/minaakshi_gentela.jpg" alt="Minaakshi Gentela"/>
+      <div class="img-wrap"><img src="dancers/minaakshi_gentela.jpg" alt="Minaakshi Gentela"/></div>
       <p class="d-name">Minaakshi Gentela</p><p class="d-role">Kuchipudi Captain</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/rhea_sharma.jpg" alt="Rhea Sharma"/>
+      <div class="img-wrap"><img src="dancers/rhea_sharma.jpg" alt="Rhea Sharma"/></div>
       <p class="d-name">Rhea Sharma</p><p class="d-role">Bharatanatyam Co-Captain</p>
     </div>
 
     <!-- ROW 2 -->
     <div class="dancer-card">
-      <img src="dancers/anshika_rath.jpg" alt="Anshika Rath"/>
+      <div class="img-wrap"><img src="dancers/anshika_rath.jpg" alt="Anshika Rath"/></div>
       <p class="d-name">Anshika Rath</p><p class="d-role">Odissi Captain</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/samitha_jonnalagadda.jpg" alt="Samitha Jonnalagadda"/>
+      <div class="img-wrap"><img src="dancers/samitha_jonnalagadda.jpg" alt="Samitha Jonnalagadda"/></div>
       <p class="d-name">Samitha Jonnalagadda</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/rachana_gurudu.jpg" alt="Rachana Gurudu"/>
+      <div class="img-wrap"><img src="dancers/rachana_gurudu.jpg" alt="Rachana Gurudu"/></div>
       <p class="d-name">Rachana Gurudu</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/gauri_nair.jpg" alt="Gauri Nair"/>
+      <div class="img-wrap"><img src="dancers/gauri_nair.jpg" alt="Gauri Nair"/></div>
       <p class="d-name">Gauri Nair</p><p class="d-role">Bharatanatyam</p>
     </div>
 
     <!-- ROW 3 -->
     <div class="dancer-card">
-      <img src="dancers/neera_ramanatham.jpg" alt="Netra Ramanatham"/>
+      <div class="img-wrap"><img src="dancers/neera_ramanatham.jpg" alt="Netra Ramanatham"/></div>
       <p class="d-name">Netra Ramanatham</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/janani_rajan.jpg" alt="Janani Rajan"/>
+      <div class="img-wrap"><img src="dancers/janani_rajan.jpg" alt="Janani Rajan"/></div>
       <p class="d-name">Janani Rajan</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/srila_munukutla.jpg" alt="Srila Munukutla"/>
+      <div class="img-wrap"><img src="dancers/srila_munukutla.jpg" alt="Srila Munukutla"/></div>
       <p class="d-name">Srila Munukutla</p><p class="d-role">Kuchipudi</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/sahana_shivakumar.jpg" alt="Sahana Shivakumar"/>
+      <div class="img-wrap"><img src="dancers/sahana_shivakumar.jpg" alt="Sahana Shivakumar"/></div>
       <p class="d-name">Sahana Shivakumar</p><p class="d-role">Bharatanatyam</p>
     </div>
 
     <!-- ROW 4 -->
     <div class="dancer-card">
-      <img src="dancers/dhriti_tattari.jpg" alt="Dhriti Tattari"/>
+      <div class="img-wrap"><img src="dancers/dhriti_tattari.jpg" alt="Dhriti Tattari"/></div>
       <p class="d-name">Dhriti Tattari</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/teju_sanikommu.jpg" alt="Teju Sanikommu"/>
+      <div class="img-wrap"><img src="dancers/teju_sanikommu.jpg" alt="Teju Sanikommu"/></div>
       <p class="d-name">Teju Sanikommu</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/ananya_velan.jpg" alt="Ananya Velan"/>
+      <div class="img-wrap"><img src="dancers/ananya_velan.jpg" alt="Ananya Velan"/></div>
       <p class="d-name">Ananya Velan</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/viranshi_vira.jpg" alt="Viranshi Vira"/>
+      <div class="img-wrap"><img src="dancers/viranshi_vira.jpg" alt="Viranshi Vira"/></div>
       <p class="d-name">Viranshi Vira</p><p class="d-role">Bharatanatyam</p>
     </div>
 
     <!-- ROW 5 -->
     <div class="dancer-card">
-      <img src="dancers/isha_daxini.jpg" alt="Isha Daxini"/>
+      <div class="img-wrap"><img src="dancers/isha_daxini.jpg" alt="Isha Daxini"/></div>
       <p class="d-name">Isha Daxini</p><p class="d-role">Kathak</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/eshita_kadiri.jpg" alt="Eshita Kadiri"/>
+      <div class="img-wrap"><img src="dancers/eshita_kadiri.jpg" alt="Eshita Kadiri"/></div>
       <p class="d-name">Eshita Kadiri</p><p class="d-role">Kuchipudi</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/amulya_buddha.jpg" alt="Amulya Buddha"/>
+      <div class="img-wrap"><img src="dancers/amulya_buddha.jpg" alt="Amulya Buddha"/></div>
       <p class="d-name">Amulya Buddha</p><p class="d-role">Kuchipudi</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/sahaara_enjeem.jpg" alt="Sahasra Enjeeti"/>
+      <div class="img-wrap"><img src="dancers/sahaara_enjeem.jpg" alt="Sahasra Enjeeti"/></div>
       <p class="d-name">Sahasra Enjeeti</p><p class="d-role">Kuchipudi</p>
     </div>
 
     <!-- ROW 6 -->
     <div class="dancer-card">
-      <img src="dancers/deekshanjani_tummula.jpg" alt="Deekshanjani Tummula"/>
+      <div class="img-wrap"><img src="dancers/deekshanjani_tummula.jpg" alt="Deekshanjani Tummula"/></div>
       <p class="d-name">Deekshanjani Tummula</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/rishika_santhebennur.jpg" alt="Rishika Santhebennur"/>
+      <div class="img-wrap"><img src="dancers/rishika_santhebennur.jpg" alt="Rishika Santhebennur"/></div>
       <p class="d-name">Rishika Santhebennur</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/deetya_narsipur.jpg" alt="Deetya Narsipur"/>
+      <div class="img-wrap"><img src="dancers/deetya_narsipur.jpg" alt="Deetya Narsipur"/></div>
       <p class="d-name">Deetya Narsipur</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/srilalitha_nair.jpg" alt="Srilalitha Nair"/>
+      <div class="img-wrap"><img src="dancers/srilalitha_nair.jpg" alt="Srilalitha Nair"/></div>
       <p class="d-name">Srilalitha Nair</p><p class="d-role">Bharatanatyam</p>
     </div>
 
     <!-- ROW 7 -->
     <div class="dancer-card">
-      <img src="dancers/priya_garg.jpg" alt="Priya Garg"/>
+      <div class="img-wrap"><img src="dancers/priya_garg.jpg" alt="Priya Garg"/></div>
       <p class="d-name">Priya Garg</p><p class="d-role">Kathak</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/prisha_parmar.jpg" alt="Prisha Parmar"/>
+      <div class="img-wrap"><img src="dancers/prisha_parmar.jpg" alt="Prisha Parmar"/></div>
       <p class="d-name">Prisha Parmar</p><p class="d-role">Kathak</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/nandini_goel.jpg" alt="Nandini Goel"/>
+      <div class="img-wrap"><img src="dancers/nandini_goel.jpg" alt="Nandini Goel"/></div>
       <p class="d-name">Nandini Goel</p><p class="d-role">Kathak</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/pranavi_annaluru.jpg" alt="Pranavi Annaluru"/>
+      <div class="img-wrap"><img src="dancers/pranavi_annaluru.jpg" alt="Pranavi Annaluru"/></div>
       <p class="d-name">Pranavi Annaluru</p><p class="d-role">Kuchipudi</p>
     </div>
 
     <!-- ROW 8 -->
     <div class="dancer-card">
-      <img src="dancers/anu_dhananjit.jpg" alt="Anu Dhananjay"/>
+      <div class="img-wrap"><img src="dancers/anu_dhananjit.jpg" alt="Anu Dhananjay"/></div>
       <p class="d-name">Anu Dhananjay</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/chandra_kadali.jpg" alt="Chandra Kadali"/>
+      <div class="img-wrap"><img src="dancers/chandra_kadali.jpg" alt="Chandra Kadali"/></div>
       <p class="d-name">Chandra Kadali</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/sufiya_kaul.jpg" alt="Sufiya Kaul"/>
+      <div class="img-wrap"><img src="dancers/sufiya_kaul.jpg" alt="Sufiya Kaul"/></div>
       <p class="d-name">Sufiya Kaul</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/meha_sekaran.jpg" alt="Meha Sekaran"/>
+      <div class="img-wrap"><img src="dancers/meha_sekaran.jpg" alt="Meha Sekaran"/></div>
       <p class="d-name">Meha Sekaran</p><p class="d-role">Bharatanatyam</p>
     </div>
 
     <!-- ROW 9 -->
     <div class="dancer-card">
-      <img src="dancers/smera_arkalgud.jpg" alt="Smera Arkalgud"/>
+      <div class="img-wrap"><img src="dancers/smera_arkalgud.jpg" alt="Smera Arkalgud"/></div>
       <p class="d-name">Smera Arkalgud</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/prithika_padmanabhan.jpg" alt="Prithika Padmanabhan"/>
+      <div class="img-wrap"><img src="dancers/prithika_padmanabhan.jpg" alt="Prithika Padmanabhan"/></div>
       <p class="d-name">Prithika Padmanabhan</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/sandra_haridas.jpg" alt="Sandra Haridas"/>
+      <div class="img-wrap"><img src="dancers/sandra_haridas.jpg" alt="Sandra Haridas"/></div>
       <p class="d-name">Sandra Haridas</p><p class="d-role">Bharatanatyam</p>
     </div>
     <div class="dancer-card">
-      <img src="dancers/rhea_kandlapally.jpg" alt="Rhea Kandarapally"/>
+      <div class="img-wrap"><img src="dancers/rhea_kandlapally.jpg" alt="Rhea Kandarapally"/></div>
       <p class="d-name">Rhea Kandarapally</p><p class="d-role">Bharatanatyam</p>
     </div>
 
