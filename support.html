@@ -25,18 +25,13 @@
       background-attachment: fixed;
     }
 
-    /* NAV */
-    nav{background:#b83c0c;padding:0.6rem 2rem;display:flex;align-items:center;
-      justify-content:space-between;position:sticky;top:0;z-index:100;
-      box-shadow:0 2px 14px rgba(0,0,0,0.55);}
-    .nav-logo{font-family:'Dancing Script',cursive;font-size:1.5rem;font-weight:400;
-      color:#ecbad2;text-decoration:underline;text-underline-offset:3px;}
-    .nav-links{display:flex;gap:2rem;list-style:none;}
-    .nav-links a{font-family:'XB Niloofar','Crimson Text',serif;font-size:1.05rem;
-      color:#ecbad2;text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
-    .nav-links a:hover,.nav-links a.active{color:#ffd6e8;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-    .hamburger span{display:block;width:24px;height:2px;background:#ecbad2;}
+    
+    
+    
+    
+    
+    
+    
 
     /* HERO */
     .support-hero {
@@ -141,9 +136,8 @@
       color:rgba(236,186,210,0.5);font-family:'XB Niloofar','Crimson Text',serif;}
 
     @media(max-width:600px){
-      .hamburger{display:flex;}
-      .nav-links{display:none;flex-direction:column;gap:0.7rem;position:absolute;top:100%;right:0;
-        background:#b83c0c;padding:1rem 1.5rem;min-width:180px;box-shadow:0 4px 16px rgba(0,0,0,0.5);}
+      
+      
       .nav-links.open{display:flex;}
       .cards-grid{grid-template-columns:1fr;}
     }
@@ -155,6 +149,38 @@
 
     /* Orange zone text */
     .dark-text { color: #2d0f18 !important; }
+
+    /* ── NAV ── */
+    nav {
+      background: #b83c0c; display: flex; align-items: center;
+      justify-content: space-between; padding: 0.6rem 2rem;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.45);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: #ecbad2; text-decoration: none;
+      font-family: 'Crimson Text', serif; font-size: 1.05rem;
+      letter-spacing: 0.03em; transition: opacity 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 0.75; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #ecbad2; }
+    @media (max-width: 700px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0.8rem;
+        position: absolute; top: 100%; right: 0; left: 0;
+        background: #b83c0c; padding: 1rem 2rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.4); z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+    }
   </style>
 </head>
 <body>
