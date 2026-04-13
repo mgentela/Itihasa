@@ -6,38 +6,29 @@
   <title>Program – Ithihasa Anubhava</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Crimson Text', Georgia, serif;
-      background: linear-gradient(180deg, #5d0e6c 0%, #620e5a 20%, #690058 38%, #ee5d6c 72%, #fb9062 100%);
-      min-height: 100vh; color: #ecbad2;
+      background: linear-gradient(160deg, #095c99 0%, #480c7d 18%, #160057 35%, #4c0069 50%, #7d0a72 65%, #b40c7b 82%, #c80f89 100%);
+      min-height: 100vh; color: #fff;
     }
-    nav {
-      background: #b83c0c; display: flex; align-items: center;
-      justify-content: space-between; padding: 0.6rem 2rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-logos img { height: 48px; width: auto; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: #ecbad2; text-decoration: none;
-      font-family: 'Crimson Text', serif; font-size: 1.05rem;
-      letter-spacing: 0.03em; transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 0.75; }
+    
+    
+    
+    
+    
+    
     .page-header { text-align: center; padding: 2.5rem 1rem 1rem; }
     .page-header h1 {
-      font-family: 'Dancing Script', cursive; font-weight: 400;
-      font-size: clamp(2.2rem, 5vw, 3.5rem); color: #ecbad2;
+      font-family: 'Great Vibes', cursive; font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.5rem); color: #fff;
       text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
     .page-header .seating {
       font-family: 'Crimson Text', serif; font-size: 1rem;
-      color: #ecbad2; opacity: 0.85; margin-top: 0.3rem; font-style: italic;
+      color: #fff; opacity: 0.85; margin-top: 0.3rem; font-style: italic;
     }
     .header-img { width: 130px; margin: 1rem auto 0; display: block; }
     .intro {
@@ -46,91 +37,70 @@
     }
     .intro p {
       font-family: 'Crimson Text', serif; font-size: 1rem;
-      line-height: 1.75; color: #ecbad2; margin-bottom: 1rem;
+      line-height: 1.75; color: #fff; margin-bottom: 1rem;
     }
     .intro p:last-child { margin-bottom: 0; }
-    .courtesy { font-family: 'Marck Script', cursive; font-size: 1.05rem; color: #ecbad2; margin-bottom: 0.5rem; }
+    .courtesy { font-family: 'Great Vibes', cursive; font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
     .intro ul { list-style: none; text-align: left; display: inline-block; margin-top: 0.25rem; }
-    .intro ul li { font-family: 'Crimson Text', serif; font-size: 0.95rem; color: #ecbad2; padding: 0.2rem 0; }
+    .intro ul li { font-family: 'Crimson Text', serif; font-size: 0.95rem; color: #fff; padding: 0.2rem 0; }
     .intro ul li::before { content: "• "; }
     .program { max-width: 860px; margin: 0 auto 4rem; padding: 0 1.5rem; }
     .item {
       display: grid; grid-template-columns: 110px 1fr 180px;
       gap: 0 1.5rem; padding: 2.2rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.15);
-      align-items: start; color: #ecbad2;
+      align-items: start; color: #fff;
     }
     
     .item-art { display: flex; align-items: flex-start; justify-content: center; padding-top: 0.25rem; }
     .item-art img { width: 95px; height: 95px; object-fit: contain; }
     .item-body { min-width: 0; }
     .item-title {
-      font-family: 'Dancing Script', cursive; font-weight: 400;
+      font-family: 'Great Vibes', cursive; font-weight: 400;
       font-size: clamp(1.6rem, 3.2vw, 2.1rem); line-height: 1.15; margin-bottom: 0.2rem;
     }
-    .item .item-title { color: #ecbad2; }
+    .item .item-title { color: #fff; }
     
     .raagam-talam {
-      font-family: 'XB Niloofar', 'Crimson Text', serif;
+      font-family: 'Della Respira', 'Crimson Text', serif;
       font-size: 0.88rem; margin-bottom: 0.35rem; opacity: 0.85;
     }
-    .item .raagam-talam { color: #ecbad2; }
+    .item .raagam-talam { color: #fff; }
     
     .style-tag {
       font-family: 'Crimson Text', serif; font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.65; margin-bottom: 0.55rem;
     }
-    .item .style-tag { color: #ecbad2; }
+    .item .style-tag { color: #fff; }
     
     .description { font-family: 'Crimson Text', serif; font-size: 0.91rem; line-height: 1.68; }
-    .item .description { color: #ecbad2; opacity: 0.92; }
+    .item .description { color: #fff; opacity: 0.92; }
     
     .cast { border-left: 1px solid rgba(255,255,255,0.22); padding-left: 1rem; }
     
     .cast-block { margin-bottom: 0.9rem; }
     .cast-block:last-child { margin-bottom: 0; }
-    .cast-label { font-family: 'Marck Script', cursive; font-size: 1.05rem; margin-bottom: 0.15rem; }
-    .item .cast-label { color: #ecbad2; }
+    .cast-label { font-family: 'Great Vibes', cursive; font-size: 1.05rem; margin-bottom: 0.15rem; }
+    .item .cast-label { color: #fff; }
     
-    .cast-names { font-family: 'XB Niloofar', 'Crimson Text', serif; font-size: 0.84rem; line-height: 1.55; }
-    .item .cast-names { color: #ecbad2; opacity: 0.88; }
+    .cast-names { font-family: 'Della Respira', 'Crimson Text', serif; font-size: 0.84rem; line-height: 1.55; }
+    .item .cast-names { color: #fff; opacity: 0.88; }
     
-    footer { background: rgba(0,0,0,0.3); text-align: center; padding: 1.25rem 1rem; font-size: 0.85rem; color: #ecbad2; opacity: 0.7; }
+    footer { background: rgba(0,0,0,0.3); text-align: center; padding: 1.25rem 1rem; font-size: 0.85rem; color: #fff; opacity: 0.7; }
     @media (max-width: 640px) {
       .item { grid-template-columns: 75px 1fr; }
       .cast { grid-column: 1 / -1; border-left: none; border-top: 1px solid rgba(255,255,255,0.2); padding-left: 0; padding-top: 0.75rem; margin-top: 0.75rem; }
     }
 
-    nav {
-      background: #b83c0c; display: flex; align-items: center;
-      justify-content: space-between; padding: 0.6rem 2rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.45);
-    }
-    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-logos img { height: 48px; width: auto; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: #ecbad2; text-decoration: none;
-      font-family: 'Crimson Text', serif; font-size: 1.05rem;
-      letter-spacing: 0.03em; transition: opacity 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { opacity: 0.75; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; background: none; border: none; padding: 4px;
-    }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #ecbad2; }
-    @media (max-width: 700px) {
-      .hamburger { display: flex; }
-      .nav-links {
-        display: none; flex-direction: column; gap: 0.8rem;
-        position: absolute; top: 100%; right: 0; left: 0;
-        background: #b83c0c; padding: 1rem 2rem;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.4); z-index: 99;
-      }
-      .nav-links.open { display: flex; }
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     @media (max-width: 700px) {
       .item { grid-template-columns: 70px 1fr; }
@@ -161,13 +131,33 @@
     .item.dark-zone .cast { border-left-color: rgba(45,15,24,0.2); }
     .item.dark-zone .cast-label { color: #2d0f18; }
     .item.dark-zone .cast-names { color: #2d0f18; opacity: 0.85; }
+
+    nav {
+      background: #000; display: flex; align-items: center;
+      justify-content: space-between; padding: 0.6rem 2rem;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 44px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: #fff; text-decoration: none; font-family: 'Della Respira', serif; font-size: 1.05rem; letter-spacing: 0.03em; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 0.7; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+    @media (max-width: 700px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; gap: 0.8rem; position: absolute; top: 100%; right: 0; left: 0; background: #000; padding: 1rem 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.5); z-index: 99; }
+      .nav-links.open { display: flex; }
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Della+Respira&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <nav>
   <div class="nav-logos">
-    <img src="nritya_logo_transparent.png" alt="NRITYA"/>
-    <img src="naadam_logo_pink.png" alt="NAADAM"/>
+    <img src="nritya_logo_white.png" alt="NRITYA"/>
+    <img src="naadam_logo_white.png" alt="NAADAM"/>
   </div>
   <button class="hamburger" aria-label="Toggle menu"
     onclick="this.nextElementSibling.classList.toggle('open')">

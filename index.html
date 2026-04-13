@@ -3,236 +3,147 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ithihasa Anubhava — CWRU Nritya & Naadam</title>
-  <meta name="description" content="CWRU's NRITYA and NAADAM present Ithihasa Anubhava — Stories of the Gods, brought to the stage. In Eldred Hall, 3–5 PM."/>
-
+  <title>Ithihasa Anubhava — CWRU Nritya &amp; Naadam</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Marck+Script&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Della+Respira&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
   <style>
-    /* ── XB Niloofar: declare local; drop XBNiloofar.ttf in this folder to activate ── */
-    @font-face {
-      font-family: 'XB Niloofar';
-      src: url('XBNiloofar.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
-
     body {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      /* Poster as full-page background, covers viewport, no repeat */
+      font-family: 'Della Respira', 'Crimson Text', Georgia, serif;
       background-image: url('bg.png');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-color: #1a0840;
-      min-height: 100vh;
-      color: #fef9f0;
+      background-size: cover; background-position: center top;
+      background-repeat: no-repeat; background-attachment: fixed;
+      background-color: #1a0840; min-height: 100vh; color: #fff;
     }
-
-    /* Dark overlay for legibility */
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 2, 22, 0.32);
-      pointer-events: none;
-      z-index: 0;
+      content: ''; position: fixed; inset: 0;
+      background: rgba(8, 2, 22, 0.32); pointer-events: none; z-index: 0;
+    }
+    nav, .page-wrap, .info-sections, footer { position: relative; z-index: 1; }
+
+    /* NAV */
+    nav {
+      background: #000; display: flex; align-items: center;
+      justify-content: space-between; padding: 0.6rem 2rem;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logos img { height: 44px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: #fff; text-decoration: none; font-family: 'Della Respira', serif; font-size: 1.05rem; letter-spacing: 0.03em; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 0.7; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; }
+    @media (max-width: 700px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; gap: 0.8rem; position: absolute; top: 100%; right: 0; left: 0; background: #000; padding: 1rem 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.5); z-index: 99; }
+      .nav-links.open { display: flex; }
     }
 
-    nav, .page-wrap, footer { position: relative; z-index: 1; }
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    /* ── PAGE LAYOUT ── */
+    /* HERO */
     .page-wrap {
-      min-height: calc(100vh - 50px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5vh 2rem 6vh;
-      text-align: center;
+      min-height: calc(100vh - 60px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 5vh 2rem 6vh; text-align: center;
     }
-
-    /* ── HERO TEXT ── */
     .presenter-line {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: #fef9f0;
-      letter-spacing: 0.06em;
-      line-height: 1.7;
-      margin-bottom: 0.6rem;
-      /* subtle text shadow so it reads over any bg region */
+      font-family: 'Della Respira', serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem); color: #fff;
+      letter-spacing: 0.06em; line-height: 1.7; margin-bottom: 0.6rem;
       text-shadow: 0 1px 12px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.4);
     }
-
     .main-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: clamp(3.5rem, 10vw, 6.5rem);
-      font-weight: 700;
-      color: #fef9f0;
-      line-height: 1.05;
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.5rem, 10vw, 6.5rem); color: #fff; line-height: 1.05;
       text-shadow: 0 3px 32px rgba(0,0,0,0.45), 0 0 60px rgba(0,0,0,0.25);
       margin-bottom: 0.5rem;
     }
-
     .tagline {
-      font-family: 'Marck Script', cursive;
-      font-size: clamp(1.1rem, 3vw, 1.65rem);
-      color: #fef9f0;
-      font-style: italic;
-      text-shadow: 0 1px 14px rgba(0,0,0,0.65);
-      margin-bottom: 0.3rem;
+      font-family: 'Della Respira', serif;
+      font-size: clamp(1.1rem, 3vw, 1.65rem); color: #fff; font-style: italic;
+      text-shadow: 0 1px 14px rgba(0,0,0,0.65); margin-bottom: 0.3rem;
     }
-
-    /* ── VINE ORNAMENT ── */
-    .vine {
-      display: block;
-      width: clamp(200px, 35vw, 300px);
-      margin: 1.2rem auto 1.4rem;
-      opacity: 0.75;
-    }
-
+    .vine { display: block; width: clamp(200px, 35vw, 300px); margin: 1.2rem auto 1.4rem; opacity: 0.75; }
     .location-line {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      color: #fef9f0;
-      letter-spacing: 0.05em;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.7);
-      margin-bottom: 4rem;
+      font-family: 'Della Respira', serif;
+      font-size: clamp(1rem, 2.2vw, 1.2rem); color: #fff;
+      letter-spacing: 0.05em; text-shadow: 0 1px 12px rgba(0,0,0,0.7); margin-bottom: 4rem;
     }
-
-    /* ── LOGOS ROW ── */
     .logos-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(2rem, 8vw, 6rem);
-      margin-top: 1rem;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(2rem, 8vw, 6rem); margin-top: 1rem; flex-wrap: wrap;
     }
+    .nritya-logo { width: clamp(130px, 18vw, 200px); height: auto; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)); }
+    .naadam-logo { width: clamp(160px, 22vw, 260px); height: auto; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5)); }
 
-    .logo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    .nritya-logo {
-      width: clamp(130px, 18vw, 200px);
-      height: auto;
-      /* drop-shadow to pop the logo off the poster */
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6));
-    }
-
-    .naadam-logo {
-      width: clamp(160px, 22vw, 260px);
-      height: auto;
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5));
-    }
-
-    /* ── ORG TEXT BELOW LOGOS ── */
+    /* ORG TEXT */
     .org-text-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      max-width: 860px;
-      margin: 2.5rem auto 0;
-      text-align: center;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; max-width: 860px; margin: 2.5rem auto 0; text-align: center;
     }
-
+    .org-text-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff;
+      margin-bottom: 0.5rem; text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    }
     .org-text p {
-      font-family: 'XB Niloofar', 'Crimson Text', Georgia, serif;
-      font-size: clamp(0.85rem, 1.6vw, 0.96rem);
-      color: rgba(255,249,240,0.92);
-      line-height: 1.7;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.7);
-      margin-bottom: 0.7rem;
+      font-family: 'Della Respira', serif;
+      font-size: clamp(0.9rem, 1.6vw, 1rem); color: #fff; opacity: 0.9;
+      line-height: 1.7; text-shadow: 0 1px 8px rgba(0,0,0,0.7); margin-bottom: 0.7rem;
     }
 
-    /* ── FOOTER ── */
+    /* INFO SECTIONS */
+    .info-sections { background: rgba(0,0,0,0.55); }
+    .info-inner { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-heading {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3rem); color: #fff; text-align: center;
+      margin-bottom: 2.5rem; text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .style-block { margin-bottom: 3rem; }
+    .style-block:last-child { margin-bottom: 0; }
+    .style-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem); color: #fff; margin-bottom: 0.5rem;
+    }
+    .style-body {
+      font-family: 'Della Respira', serif;
+      font-size: 1.1rem; line-height: 1.85; color: #fff; opacity: 0.9;
+    }
+    .style-placeholder {
+      font-family: 'Della Respira', serif;
+      font-size: 1.05rem; color: #fff; opacity: 0.55; font-style: italic;
+    }
+    .style-quote {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem; color: #fff; display: block; margin-bottom: 0.4rem;
+    }
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.18); margin: 2.5rem 0; }
+
     footer {
-      position: relative;
-      z-index: 1;
-      background: rgba(8,2,22,0.75);
-      border-top: 2px solid #b83c0c;
-      text-align: center;
-      padding: 1.1rem 1rem;
-      font-size: 0.82rem;
-      color: rgba(255,249,240,0.5);
-      font-family: 'XB Niloofar', 'Crimson Text', serif;
+      background: rgba(8,2,22,0.75); border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center; padding: 1.2rem 1rem; font-size: 0.9rem;
+      color: #fff; opacity: 0.55; font-family: 'Della Respira', serif;
     }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      
-      
-      .nav-links.open { display: flex; }
       .org-text-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .logos-row { gap: 2rem; }
     }
-
-    @media (max-width: 400px) {
-      .logos-row { flex-direction: column; gap: 1.5rem; }
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: #b83c0c; display: flex; align-items: center;
-      justify-content: space-between; padding: 0.6rem 2rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.45);
-    }
-    .nav-logos { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-logos img { height: 48px; width: auto; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: #ecbad2; text-decoration: none;
-      font-family: 'Crimson Text', serif; font-size: 1.05rem;
-      letter-spacing: 0.03em; transition: opacity 0.2s;
-    }
-    .nav-links a:hover, .nav-links a.active { opacity: 0.75; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; background: none; border: none; padding: 4px;
-    }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #ecbad2; }
-    @media (max-width: 700px) {
-      .hamburger { display: flex; }
-      .nav-links {
-        display: none; flex-direction: column; gap: 0.8rem;
-        position: absolute; top: 100%; right: 0; left: 0;
-        background: #b83c0c; padding: 1rem 2rem;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.4); z-index: 99;
-      }
-      .nav-links.open { display: flex; }
-    }
+    @media (max-width: 400px) { .logos-row { flex-direction: column; gap: 1.5rem; } }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logos">
-    <img src="nritya_logo_transparent.png" alt="NRITYA"/>
-    <img src="naadam_logo_pink.png" alt="NAADAM"/>
+    <img src="nritya_logo_white.png" alt="Nritya"/>
+    <img src="naadam_logo_white.png" alt="Naadam"/>
   </div>
-  <button class="hamburger" aria-label="Toggle menu"
-    onclick="this.nextElementSibling.classList.toggle('open')">
+  <button class="hamburger" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
@@ -244,78 +155,105 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="page-wrap">
 
-  <p class="presenter-line">CWRU's NRITYA and NAADAM present</p>
+  <p class="presenter-line">CWRU's Nritya and Naadam present</p>
 
   <h1 class="main-title">Ithihasa Anubhava</h1>
 
   <p class="tagline">Stories of the Gods, brought to the stage</p>
 
-  <!-- Decorative vine ornament -->
   <svg class="vine" viewBox="0 0 300 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 13 Q14 4 24 13 Q14 22 4 13Z"   fill="rgba(255,249,240,0.78)"/>
-    <line x1="23" y1="13" x2="44" y2="13"       stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M44 13 Q66 4 88 13"                 stroke="rgba(255,249,240,0.58)" stroke-width="1.3" fill="none"/>
-    <path d="M65 7 Q72 2 79 7 Q72 12 65 7Z"     fill="rgba(255,249,240,0.52)"/>
-    <line x1="88" y1="13" x2="130" y2="13"      stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <rect x="126" y="9" width="8" height="8" transform="rotate(45 130 13)" fill="rgba(255,249,240,0.88)"/>
-    <line x1="134" y1="13" x2="176" y2="13"     stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M176 13 Q198 4 220 13"              stroke="rgba(255,249,240,0.58)" stroke-width="1.3" fill="none"/>
-    <path d="M195 7 Q202 2 209 7 Q202 12 195 7Z" fill="rgba(255,249,240,0.52)"/>
-    <line x1="220" y1="13" x2="242" y2="13"     stroke="rgba(255,249,240,0.58)" stroke-width="1"/>
-    <path d="M296 13 Q286 4 276 13 Q286 22 296 13Z" fill="rgba(255,249,240,0.78)"/>
+    <path d="M4 13 Q14 4 24 13 Q14 22 4 13Z" fill="rgba(255,255,255,0.78)"/>
+    <line x1="23" y1="13" x2="44" y2="13" stroke="rgba(255,255,255,0.58)" stroke-width="1"/>
+    <path d="M44 13 Q66 4 88 13" stroke="rgba(255,255,255,0.58)" stroke-width="1.3" fill="none"/>
+    <path d="M65 7 Q72 2 79 7 Q72 12 65 7Z" fill="rgba(255,255,255,0.52)"/>
+    <line x1="88" y1="13" x2="130" y2="13" stroke="rgba(255,255,255,0.58)" stroke-width="1"/>
+    <rect x="126" y="9" width="8" height="8" transform="rotate(45 130 13)" fill="rgba(255,255,255,0.88)"/>
+    <line x1="134" y1="13" x2="176" y2="13" stroke="rgba(255,255,255,0.58)" stroke-width="1"/>
+    <path d="M176 13 Q198 4 220 13" stroke="rgba(255,255,255,0.58)" stroke-width="1.3" fill="none"/>
+    <path d="M195 7 Q202 2 209 7 Q202 12 195 7Z" fill="rgba(255,255,255,0.52)"/>
+    <line x1="220" y1="13" x2="242" y2="13" stroke="rgba(255,255,255,0.58)" stroke-width="1"/>
+    <path d="M296 13 Q286 4 276 13 Q286 22 296 13Z" fill="rgba(255,255,255,0.78)"/>
   </svg>
 
   <p class="location-line">In Eldred Hall from 3–5 PM</p>
 
-  <!-- LOGOS -->
   <div class="logos-row">
-
-    <!-- Nritya -->
     <div class="logo-block">
-      <img src="nritya_logo_transparent.png" alt="CWRU Nritya" class="nritya-logo"/>
+      <img src="nritya_logo_white.png" alt="Nritya" class="nritya-logo"/>
     </div>
-
-    <!-- Naadam -->
     <div class="logo-block">
-      <img src="naadam_logo_pink.png" alt="Naadam" class="naadam-logo"/>
+      <img src="naadam_logo_white.png" alt="Naadam" class="naadam-logo"/>
     </div>
-
   </div>
 
-  <!-- ORG DESCRIPTIONS -->
   <div class="org-text-grid">
     <div class="org-text">
-      <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team
-        with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions
-        with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy
-        events like Spartanthon, Nritya is a vibrant part of the community. They take pride in
-        performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural
-        History, with pieces that portray meaningful stories from Hindu mythology, historical events,
-        and contemporary themes.</p>
-      <p>This past year, Nritya made their return to the national competition scene after several
-        years and placed 3rd at Motor City Dhamaal.</p>
+      <div class="org-text-title">Nritya</div>
+      <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy events like Spartanthon, Nritya is a vibrant part of the community. We take pride in performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural History, with pieces that portray meaningful stories from Hindu mythology, historical events, and contemporary themes.</p>
+      <p>This past year, Nritya made our return to the national competition scene after several years and placed 3rd at Motor City Dhamaal.</p>
     </div>
     <div class="org-text">
-      <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team
-        with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions
-        with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy
-        events like Spartanthon, Nritya is a vibrant part of the community. They take pride in
-        performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural
-        History, with pieces that portray meaningful stories from Hindu mythology, historical events,
-        and contemporary themes.</p>
-      <p>This past year, Nritya made their return to the national competition scene after several
-        years and placed 3rd at Motor City Dhamaal.</p>
+      <div class="org-text-title">Naadam</div>
+      <p>Naadam is CWRU's premier Indian Classical Music club that celebrates Carnatic and Hindustani music styles. The mission for Naadam is to create an established space where students who learn and appreciate Indian Classical Music can express their cultural heritage. We spread awareness of Indian culture and foster an understanding of Indian Classical Music among the Case Western Reserve University community.</p>
+      <p>Over the past few years, Naadam has grown from having living room concerts to large scale Baithaks and productions including Navarasa Anubhava for the first time last year. We are glad to have gained many talented musicians and are very excited to present Itihasa Anubhava this year!</p>
     </div>
   </div>
 
 </div>
 
-<!-- FOOTER -->
+<!-- THE TRADITIONS -->
+<div class="info-sections">
+  <div class="info-inner">
+    <h2 class="section-heading">The Styles</h2>
+
+    <div class="style-block">
+      <div class="style-name">Carnatic Music</div>
+      <p class="style-body">Carnatic Music, or Karnātaka Sangeetham, is the traditional music style of South India (Andhra Pradesh, Telangana, Tamil Nadu, Karnataka, and Kerala). It has its roots in the Sāma Veda, which is one of the world's first examples of modal music. While instruments play an important role, most performed pieces are lyrical and emphasize vocal music. Carnatic music evolved greatly from the 14th century onwards, when composers like Sri Purandara Dāsa, Sri Thyāgaraja Swami, Sri Muthuswami Deekshitar, and Sri Syāma Sāstri greatly increased the breadth of repertoire while still adhering to traditional aesthetics. Lyrical topics are greatly rooted in Hindu spirituality, and this art form is used to retell the Sanskrit stories and morals of the Purānas (stories) and Ithihāsas (history) in more colloquial languages like Telugu, Tamil, Kannada, and Malayalam.</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="style-block">
+      <div class="style-name">Hindustani Music</div>
+      <p class="style-body">Hindustani Classical Music is a traditional music system that developed in the northern regions of India. Its roots trace back to the ancient Samaveda, often called the "melody Veda," where music was originally used in devotional and ritual contexts. Over time, it evolved significantly, especially during the Mughal period, when it absorbed influences from Persian musical traditions. At its core, Hindustani music is highly improvisational, allowing performers to creatively explore each raag and its unique emotional expression. Each raag is designed to evoke specific rasas, or moods, and is often associated with specific times of the day, making the performance deeply expressive and personal. A major emotional focus in this tradition is shringar rasa, the expression of love and beauty, often connected to devotion toward deities like Krishna, whose stories frequently inspire compositions. This musical tradition is also deeply connected to classical dance forms like Kathak and Odissi, where dancers interpret the same ragas through intricate footwork, gestures, and storytelling, often bringing Krishna's playful and divine narratives to life through movement.</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="style-block">
+      <div class="style-name">Bharatanatyam</div>
+      <p class="style-body">Bharatanatyam is one of India's oldest classical dance forms, with origins dating back over 3,000 years to the Nāṭya Śāstra, an ancient text by Sage Bharata. Known as the "Fifth Veda," this sacred art is deeply rooted in spirituality, with Lord Nataraja revered as the divine father of this dance form. Originally performed in South Indian temples as an offering to the gods, Bharatanatyam combines bhāva (expression), rāga (melody), tāla (rhythm), and nāṭya (storytelling) to create a powerful visual narrative. Dancers convey emotions and tell stories through hand gestures (mudrās) and facial expressions (abhinaya).<br/><br/>Many of the dancers in Nritya have trained since childhood, developing a strong foundation in technique, expressions, and the spiritual essence of the art. Tonight, you will witness intricate footwork, fluid hand gestures, and expressive facial movements as our dancers bring stories to life through their performance.</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="style-block">
+      <span class="style-quote">"Katha kahe so Kathak kahave"</span>
+      <div class="style-name">Kathak</div>
+      <p class="style-body">Kathak is a North Indian classical dance form that tells stories of gods and goddesses, rooted in the tradition of Kathakars — storytellers who conveyed narratives from Hindu epics through dance, music, and song. The term Kathak comes from the Vedic Sanskrit word Katha, which means "story", and Kathakar, which means "the one who tells a story." Originally, wandering Kathakars performed in temples, using dance as a devotional art to depict tales of Hindu deities like Krishna and Shiva. Over time, Kathak evolved in the Mughal courts, where it absorbed the Persian influences of Urdu ghazals (poetry).<br/><br/>Today, Kathak is the only Indian classical dance form that fuses Hindu and Persian artistic traditions, balancing footwork, spins, and storytelling. Dancers wear ghungroos (ankle bells) to accentuate and highlight the intricate rhythms of their movements.</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="style-block">
+      <div class="style-name">Kuchipudi</div>
+      <p class="style-placeholder">Coming soon — watch this space!</p>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="style-block">
+      <div class="style-name">Odissi</div>
+      <p class="style-placeholder">Coming soon — watch this space!</p>
+    </div>
+
+  </div>
+</div>
+
 <footer>
-  <p>© 2025 CWRU Nritya &amp; Naadam &nbsp;·&nbsp; Ithihasa Anubhava &nbsp;·&nbsp; Eldred Hall, Case Western Reserve University</p>
+  &copy; 2025 CWRU Nritya &amp; Naadam &nbsp;&middot;&nbsp; Ithihasa Anubhava &nbsp;&middot;&nbsp; Eldred Hall, Case Western Reserve University
 </footer>
 
 </body>
