@@ -174,6 +174,27 @@
       .nav-links { display: none; flex-direction: column; gap: 0.8rem; position: absolute; top: 100%; right: 0; left: 0; background: #000; padding: 1rem 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.5); z-index: 99; }
       .nav-links.open { display: flex; }
     }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { cursor: pointer; }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #000; list-style: none; min-width: 160px;
+      padding: 0.5rem 0; box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      z-index: 200; border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .dropdown-menu li a {
+      display: block; padding: 0.5rem 1.2rem;
+      color: #fff; text-decoration: none;
+      font-family: 'Della Respira', serif; font-size: 0.98rem;
+      transition: background 0.15s;
+    }
+    .dropdown-menu li a:hover, .dropdown-menu li a.active { background: rgba(255,255,255,0.1); opacity: 1; }
+    .nav-dropdown.open .dropdown-menu { display: block; }
+    @media (max-width: 700px) {
+      .dropdown-menu { position: static; box-shadow: none; border-top: none; padding-left: 1rem; background: transparent; }
+      .nav-dropdown.open .dropdown-menu { display: block; }
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Della+Respira&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 </head>
@@ -190,9 +211,14 @@
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="dancers.html">Nritya</a></li>
-    <li><a href="musicians.html">Naadam</a></li>
-    <li><a href="featured_guests.html">Featured Guests</a></li>
+    <li class="nav-dropdown">
+      <a href="#" onclick="this.parentElement.classList.toggle('open'); return false;">Performers ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="dancers.html">Nritya</a></li>
+        <li><a href="musicians.html">Naadam</a></li>
+        <li><a href="featured_guests.html">Featured Guests</a></li>
+      </ul>
+    </li>
     <li><a href="program.html">Program</a></li>
     <li><a href="support.html" class="active">Support Us</a></li>
   </ul>
