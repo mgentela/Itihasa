@@ -58,6 +58,7 @@
     }
     .main-title {
       font-family: 'Great Vibes', cursive;
+      font-weight: 400;
       font-size: clamp(3.5rem, 10vw, 6.5rem); color: #fff; line-height: 1.05;
       text-shadow: 0 3px 32px rgba(0,0,0,0.45), 0 0 60px rgba(0,0,0,0.25);
       margin-bottom: 0.5rem;
@@ -73,18 +74,15 @@
       font-size: clamp(1rem, 2.2vw, 1.2rem); color: #fff;
       letter-spacing: 0.05em; text-shadow: 0 1px 12px rgba(0,0,0,0.7); margin-bottom: 4rem;
     }
-    .logos-row {
-      display: flex; align-items: center; justify-content: center;
-      gap: clamp(2rem, 8vw, 6rem); margin-top: 1rem; flex-wrap: wrap;
-    }
-    .nritya-logo { width: clamp(130px, 18vw, 200px); height: auto; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)); }
-    .naadam-logo { width: clamp(160px, 22vw, 260px); height: auto; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.5)); }
-
-    /* ORG TEXT */
+    /* ORG COLUMNS — logo centered above its bio */
     .org-text-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2.5rem; max-width: 860px; margin: 2.5rem auto 0; text-align: center;
+      gap: 2.5rem; max-width: 860px; margin: 2.5rem auto 0;
     }
+    .org-text { text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .org-logo { margin-bottom: 0.75rem; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.55)); }
+    .nritya-logo { width: clamp(110px, 15vw, 170px); height: auto; }
+    .naadam-logo { width: clamp(140px, 19vw, 230px); height: auto; }
     .org-text-title {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff;
@@ -130,10 +128,8 @@
       color: #fff; opacity: 0.55; font-family: 'Della Respira', serif;
     }
     @media (max-width: 600px) {
-      .org-text-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .logos-row { gap: 2rem; }
+      .org-text-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
-    @media (max-width: 400px) { .logos-row { flex-direction: column; gap: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -143,13 +139,15 @@
     <img src="nritya_logo_white.png" alt="Nritya"/>
     <img src="naadam_logo_white.png" alt="Naadam"/>
   </div>
-  <button class="hamburger" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">
+  <button class="hamburger" aria-label="Toggle menu"
+    onclick="this.nextElementSibling.classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="dancers.html">Dancers</a></li>
-    <li><a href="musicians.html">Musicians</a></li>
+    <li><a href="dancers.html">Nritya</a></li>
+    <li><a href="musicians.html">Naadam</a></li>
+    <li><a href="featured_guests.html">Featured Guests</a></li>
     <li><a href="program.html">Program</a></li>
     <li><a href="support.html">Support Us</a></li>
   </ul>
@@ -179,22 +177,15 @@
 
   <p class="location-line">In Eldred Hall from 3–5 PM</p>
 
-  <div class="logos-row">
-    <div class="logo-block">
-      <img src="nritya_logo_white.png" alt="Nritya" class="nritya-logo"/>
-    </div>
-    <div class="logo-block">
-      <img src="naadam_logo_white.png" alt="Naadam" class="naadam-logo"/>
-    </div>
-  </div>
-
   <div class="org-text-grid">
     <div class="org-text">
+      <img src="nritya_logo_white.png" alt="Nritya" class="org-logo nritya-logo"/>
       <div class="org-text-title">Nritya</div>
       <p>CWRU Nritya is Case Western Reserve University's premier Indian classical dance team with expertise in Bharatanatyam, Kuchipudi, Kathak, and Odissi. From staging productions with live orchestras and choreographing for wedding sangeets to supporting campus philanthropy events like Spartanthon, Nritya is a vibrant part of the community. We take pride in performing across Cleveland, from the Cultural Gardens to the Cleveland Museum of Natural History, with pieces that portray meaningful stories from Hindu mythology, historical events, and contemporary themes.</p>
       <p>This past year, Nritya made our return to the national competition scene after several years and placed 3rd at Motor City Dhamaal.</p>
     </div>
     <div class="org-text">
+      <img src="naadam_logo_white.png" alt="Naadam" class="org-logo naadam-logo"/>
       <div class="org-text-title">Naadam</div>
       <p>Naadam is CWRU's premier Indian Classical Music club that celebrates Carnatic and Hindustani music styles. The mission for Naadam is to create an established space where students who learn and appreciate Indian Classical Music can express their cultural heritage. We spread awareness of Indian culture and foster an understanding of Indian Classical Music among the Case Western Reserve University community.</p>
       <p>Over the past few years, Naadam has grown from having living room concerts to large scale Baithaks and productions including Navarasa Anubhava for the first time last year. We are glad to have gained many talented musicians and are very excited to present Itihasa Anubhava this year!</p>
